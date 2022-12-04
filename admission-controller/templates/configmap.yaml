@@ -1,0 +1,27 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "admission.fullname" . }}
+data:
+  admission.yaml: |
+    ---
+    logger:
+      debug: {{ .Values.logger.debug }}
+
+    admission:
+      tls_port: {{ .Values.admission.tls_port }}
+      cert_file_path: {{ .Values.admission.cert_file_path }}
+      cert_key_path: {{ .Values.admission.cert_key_path }}
+      excluded_resources: {{ toYaml .Values.admission.excluded_resources | nindent 10 }}
+
+    policy:
+      block_exec: {{ .Values.policy.block_exec }}
+      bypass_scope: {{ .Values.policy.bypass_scope }}
+
+    scanner:
+      server: {{ .Values.scanner.server }}
+      namespace: {{ .Values.scanner.namespace }}
+      timeout: {{ .Values.scanner.timeout }}
+      skipVerify: {{ .Values.scanner.skipVerify }}
+      defaultRegistry: {{ .Values.scanner.defaultRegistry }}
+      blockOnError: {{ .Values.scanner.blockOnError }}

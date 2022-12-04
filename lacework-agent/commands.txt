@@ -1,0 +1,41 @@
+
+helm repo update lacework
+
+
+
+export LACEWORK_AGENT_TOKEN=4814ffcf8aa8ddb369bc69dfdb7a0f86d6ac4c7dc85537c6e61b2ba3
+export LACEWORK_SERVER_URL=https://api.lacework.net
+
+export KUBERNETES_CLUSTER_NAME=rsiekermann-eks.eu-central-1.eksctl.io
+
+
+EU
+helm upgrade --install --namespace lacework --create-namespace \
+          --set laceworkConfig.accessToken=${LACEWORK_AGENT_TOKEN} \
+          --set laceworkConfig.serverUrl=${LACEWORK_SERVER_URL} \
+          lacework-agent lacework/lacework-agent
+
+
+helm upgrade --install --namespace lacework --create-namespace \
+          --set laceworkConfig.accessToken=${LACEWORK_AGENT_TOKEN} \
+          --set laceworkConfig.serverUrl=${LACEWORK_SERVER_URL} \
+          --set laceworkConfig.kubernetesCluster=${KUBERNETES_CLUSTER_NAME} \
+          lacework-agent lacework/lacework-agent
+
+US
+helm upgrade --install --namespace lacework --create-namespace \
+          --set laceworkConfig.accessToken=${LACEWORK_AGENT_TOKEN} \
+          lacework-agent lacework/lacework-agent
+
+
+
+kubectl delete configmap lacework-config -n lacework 
+kubectl delete daemonset lacework-agent -n lacework 
+
+
+kubectl get configmap -n lacework
+kubectl describe configmap lacework-config -n lacework
+
+
+kubectl get daemonset -n lacework
+kubectl describe  daemonset lacework-agent -n lacework

@@ -1,0 +1,181 @@
+apiVersion: v1
+entries:
+  admission-controller:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-12-23T22:21:04.634212+01:00"
+    dependencies:
+    - condition: proxy-scanner.enabled
+      name: proxy-scanner
+      repository: https://lacework.github.io/helm-charts
+      version: 0.2.3
+    description: Lacework admission controller using Lacework proxy scanner
+    digest: ab9008563a2270e84376d0a7303e0eca362075644a2062fdebb6adde762b23c9
+    keywords:
+    - admission-controller
+    - runtime-security
+    - lacework
+    maintainers:
+    - email: chitra.kumar@lacework.net
+      name: chitrapkumar
+    name: admission-controller
+    type: application
+    urls:
+    - admission-controller-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-12-23T22:21:04.6318+01:00"
+    dependencies:
+    - condition: proxy-scanner.enabled
+      name: proxy-scanner
+      repository: https://lacework.github.io/helm-charts
+      version: 0.2.2
+    description: Lacework admission controller using Lacework proxy scanner
+    digest: d4237d89cd765955f37599aa49fee0b3a7041b644de833ee28d5759a9483def5
+    keywords:
+    - admission-controller
+    - runtime-security
+    - lacework
+    maintainers:
+    - email: chitra.kumar@lacework.net
+      name: chitrapkumar
+    name: admission-controller
+    type: application
+    urls:
+    - admission-controller-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-12-23T22:21:04.630347+01:00"
+    dependencies:
+    - condition: proxy-scanner.enabled
+      name: proxy-scanner
+      repository: https://lacework.github.io/helm-charts
+      version: 0.2.2
+    description: Lacework admission controller using Lacework proxy scanner
+    digest: 74ea4088ecb266b6a234ca108079e0f067541886823756893d3a02d68fe3423a
+    keywords:
+    - admission-controller
+    - runtime-security
+    - lacework
+    maintainers:
+    - email: chitra.kumar@lacework.net
+      name: chitrapkumar
+    name: admission-controller
+    type: application
+    urls:
+    - admission-controller-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-12-23T22:21:04.627121+01:00"
+    dependencies:
+    - condition: proxy-scanner.enabled
+      name: proxy-scanner
+      repository: https://lacework.github.io/helm-charts
+      version: 0.2.2
+    description: Lacework admission controller using Lacework proxy scanner
+    digest: c8d01b37286474bdcf0250fc50841ed65ac568332329efa4ec0fc798b1327069
+    keywords:
+    - admission-controller
+    - runtime-security
+    - lacework
+    maintainers:
+    - email: chitra.kumar@lacework.net
+      name: chitrapkumar
+    name: admission-controller
+    type: application
+    urls:
+    - admission-controller-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-12-23T22:21:04.625241+01:00"
+    description: Lacework admission controller using Lacework proxy scanner
+    digest: d6d2a6042b051b02ee6eac547b528cb56c5d2ce772f79f962bfb01f41c8ccccd
+    keywords:
+    - admission-controller
+    - runtime-security
+    - lacework
+    maintainers:
+    - email: chitra.kumar@lacework.net
+      name: chitrapkumar
+    name: admission-controller
+    type: application
+    urls:
+    - admission-controller-0.1.0.tgz
+    version: 0.1.0
+  lacework-agent:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-12-23T22:21:04.635848+01:00"
+    description: Lacework Agent
+    digest: e6c0778f858ed427cf0bc48a509b22480473d9d0b1a38fcc22ab532a74c1118c
+    home: https://www.lacework.com
+    icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
+    keywords:
+    - monitoring
+    - security
+    - run-time
+    - metric
+    - troubleshooting
+    maintainers:
+    - email: info@lacework.net
+      name: lacework-support
+    name: lacework-agent
+    urls:
+    - lacework-agent-5.0.0.tgz
+    version: 5.0.0
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-12-23T22:21:04.635099+01:00"
+    description: Lacework Agent
+    digest: 316df313975abcb5ab65846cc749c194c5169f09636f2ffbc26a71f0ae9ef29b
+    home: https://www.lacework.com
+    icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
+    keywords:
+    - monitoring
+    - security
+    - run-time
+    - metric
+    - troubleshooting
+    maintainers:
+    - email: info@lacework.net
+      name: lacework-support
+    name: lacework-agent
+    urls:
+    - lacework-agent-4.3.0.tgz
+    version: 4.3.0
+  proxy-scanner:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-12-23T22:21:04.637293+01:00"
+    description: A Helm chart for Lacework Proxy Scanner
+    digest: ce118973bd7461cd341918caee21864fa8988169db67e147c456a16500485975
+    name: proxy-scanner
+    type: application
+    urls:
+    - proxy-scanner-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-12-23T22:21:04.636697+01:00"
+    description: A Helm chart for Lacework Proxy Scanner
+    digest: adc5ba1623b878b70329e67cf97263f7ff353befdd2d47efe8f2e75808d6ad76
+    name: proxy-scanner
+    type: application
+    urls:
+    - proxy-scanner-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2021-12-23T22:21:04.636264+01:00"
+    description: A Helm chart for Lacework Proxy Scanner
+    digest: fb0bbde3066707aca7f32735c9890e5cf2b24181c9357467124b9cb4fa209f08
+    name: proxy-scanner
+    type: application
+    urls:
+    - proxy-scanner-0.2.1.tgz
+    version: 0.2.1
+generated: "2021-12-23T22:21:04.624103+01:00"

@@ -1,0 +1,95 @@
+name: lacework-admission-controller
+
+# Configuration
+logger:
+  debug: true
+
+admission:
+  tls_port: 8443
+  cert_file_path: "/certs/admission.crt"
+  cert_key_path: "/certs/admission.key"
+  excluded_resources:
+  -
+  -
+
+policy:
+  block_exec: false
+  bypass_scope: "kube-system,kube-public,lacework,lacework-dev"
+
+scanner:
+  server: "lacework-proxy-scanner"
+  namespace: "lacework"
+  skipVerify: true
+  caCert:
+  timeout: 30
+  defaultRegistry: index.docker.io
+  blockOnError: false
+
+# Kubernetes
+nameOverride: "lacework-admission-controller"
+fullnameOverride: "lacework-admission-controller"
+
+serviceAccount:
+  name: lacework-admission-sa
+
+certs:
+  name: lacework-admission-certs
+  serverCertificate:
+  serverKey:
+
+webhooks:
+  caBundle:
+  failurePolicy: Ignore
+  timeoutSeconds: 30
+
+podAnnotations: {}
+#  my-annotation-key: my value; more value
+
+securityContext:
+  runAsUser: 11431
+  runAsGroup: 11433
+  fsGroup: 11433
+container_securityContext: {}
+
+resources: {}
+  # requests:
+  #   cpu: 250m
+  #   memory: 0.2Gi
+  # limits:
+  #   cpu: 500m
+#   memory: 1.5Gi
+
+nodeSelector: {}
+
+deployment:
+  image: lacework/lacework-admission-controller
+  tag: 0.1.4
+  pullPolicy: Always
+  replicaCount: 1
+  service:
+    port: 8443
+
+proxy-scanner:
+  fullnameOverride: lacework-proxy-scanner
+  enabled: true
+  config:
+    default_registry: index.docker.io
+    static_cache_location: /opt/lacework
+    lacework:
+      account_name: 
+      integration_access_token: 
+    registries:
+      - domain: 
+        name: 
+        ssl: 
+        auto_poll: 
+        credentials:
+          user_name: 
+          password: 
+        poll_frequency_minutes: 
+        scan_non_os_packages: 
+
+  certs:
+    skipCert: true
+    serverCertificate:
+    serverKey:
