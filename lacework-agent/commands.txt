@@ -4,6 +4,7 @@ helm repo update lacework
 
 
 export LACEWORK_AGENT_TOKEN=4814ffcf8aa8ddb369bc69dfdb7a0f86d6ac4c7dc85537c6e61b2ba3
+export LACEWORK_SERVER_URL=https://api.fra.lacework.net
 export LACEWORK_SERVER_URL=https://api.lacework.net
 
 export KUBERNETES_CLUSTER_NAME=rsiekermann-eks.eu-central-1.eksctl.io
